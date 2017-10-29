@@ -9,10 +9,6 @@ public interface StudentInterface {
 	List<Course> CurrentCourses();
 	Boolean IsFullTime();
 	Boolean IsCreated(); //ie has been properly initialized and hooked to the university
-	Course SelectCourse (List<Course> courses);
-	/*returns the course selected from the list passed as parameter, which implies having this list
-	displayed to the student, who then makes a selection. It's the course corresponding to this
-	selection that is returned.*/
 	Boolean RegisterCourse(Course course); //attempts to register the student in the selected course
 	Boolean DropCourse(Course course); //attempts to delete the student from course and assign DR
 	Boolean DeRegisterCourse(Course course);
