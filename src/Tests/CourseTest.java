@@ -97,5 +97,23 @@ public class CourseTest {
 	course1.Students().add(s3);
 	course1.IsFull();
 	}
+	@Test
+	public void addStudentTest() {
+	Course course1=new Course(false, 1,3,false,2,"java",325698);
+	Student s1=new Student(1,"asar","123456");
+    course1.AddStudent(s1);//student not added, returns false 
+    Student s2=new Student(3,"John","145257");
+    course1.students.add(s2);
+    course1.AddStudent(s2);//student added, returns true
+	}
+	@Test
+	public void removeStudentTest() {
+	Course course1=new Course(false, 1,3,false,2,"java",325698);
+	Student s1=new Student(1,"asar","123456");
+    course1.RemoveStudent(s1);//student not removed, returns false 
+    Student s2=new Student(3,"John","145257");
+    course1.students.remove(s2);
+    course1.AddStudent(s2);//student removed, returns true
+	}
 	
 }

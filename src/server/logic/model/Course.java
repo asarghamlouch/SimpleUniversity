@@ -14,7 +14,7 @@ private int capSize;
 private String title;
 private int myCode;
 public boolean hasProject;
-List<Student> students;
+public List<Student> students;
 public List<Integer> prerecs;
 public List<Assignment> assignments;
 public List<Midterm> midterms;
