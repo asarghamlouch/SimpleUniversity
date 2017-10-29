@@ -39,13 +39,9 @@ public class Student implements Serializable, StudentInterface{
 		return "["+this.sid+","+this.username+","+this.password+"]";
 	}
 
-	
 	public void setUserid(int userid) {
 		this.sid = userid;
 	}
-
-
-	
 
 	public void setUsername(String username) {
 		this.username = username;
@@ -60,13 +56,11 @@ public class Student implements Serializable, StudentInterface{
 	}
 	@Override
 	public List<Course> CompletedCourses() {
-	
-		return null;
+		return courseCompleted;
 	}
 	@Override
 	public int StudentNumber() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.sid;
 	}
 	@Override
 	public String Name() {
@@ -74,33 +68,40 @@ public class Student implements Serializable, StudentInterface{
 	}
 	@Override
 	public List<Course> CurrentCourses() {
-		// TODO Auto-generated method stub
-		return null;
+		return courses;
 	}
 	@Override
 	public Boolean IsFullTime() {
-		// TODO Auto-generated method stub
-		return null;
+		return isFullTime;
 	}
 	@Override
 	public Boolean IsCreated() {
-		// TODO Auto-generated method stub
-		return null;
+		if(university.Students().contains(new Student(this.sid,this.username,this.password)))
+		return true;
+		return false;
 	}
+  
+
 	@Override
 	public Boolean RegisterCourse(Course course) {
-		// TODO Auto-generated method stub
-		return null;
+		if(courses.contains(course))
+		return true;
+		return false;
 	}
+
 	@Override
 	public Boolean DropCourse(Course course) {
-		// TODO Auto-generated method stub
-		return null;
+		course.students.remove(new Student(this.sid,this.username,this.password));
+	if(course.students.contains(new Student(this.sid,this.username,this.password)))
+		return false;
+	return true;
 	}
+
 	@Override
-	public Boolean DeRegisterCourse(Course course) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean DeRegisterCourse(Course course) {	    
+	   if (courses.contains(course))
+		return false;
+		return true;
 	}
 	  public int addMark(Course course) {
 	    	int studentMark=0;
