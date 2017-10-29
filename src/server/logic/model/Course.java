@@ -13,7 +13,7 @@ private boolean hasAFinal;
 private int capSize;
 private String title;
 private int myCode;
-boolean hasProject;
+public boolean hasProject;
 List<Student> students;
 public List<Integer> prerecs;
 public List<Assignment> assignments;
@@ -31,6 +31,7 @@ public Course(boolean enforcePrereqs, int numberOfMidterms, int numberOfAssignme
     throw new IllegalArgumentException("The number of Assignments should be between 0 and 5");
 	this.numberOfAssignments=numberOfAssignments;
 	this.hasAFinal=hasAFinal;
+	this.hasProject=false;
 	if (capSize>25)
 	throw new IllegalArgumentException("The maximum capacity of a class is 25");
 	this.capSize=capSize;
@@ -96,9 +97,6 @@ public int MarkForStudent(Student student) {
 }
 @Override
 public Boolean HasProject() {
-	if(totalWeight>=100)
-	hasProject=false;
-	else hasProject=true;
 	return hasProject;
 }
 @Override

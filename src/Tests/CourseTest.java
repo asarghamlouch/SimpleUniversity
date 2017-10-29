@@ -77,9 +77,25 @@ public class CourseTest {
 		Assignment a4=new Assignment (2, 10);
 		course2.assignments.add(a3);
 		course2.assignments.add(a4);
-		course2.WeightOfFinal();
-		
+		course2.WeightOfFinal();//adding a final with weight of 30%
+	}
+	@Test
+	public void hasProjectTest() {
+	Course course1=new Course(false, 1,3,false,10,"java",325698);
+	course1.HasProject();//no project
+	course1.hasProject=true;
+	course1.HasProject();//this course has a project
+	}
+	@Test
+	public void isFullTest() {
+	Course course1=new Course(false, 1,3,false,2,"java",325698);
+	Student s1=new Student(1,"asar","123456");
+	Student s2=new Student(3,"John","145257");
+	Student s3=new Student(4,"Andy","785932");
+	course1.Students().add(s1);
+	course1.Students().add(s2);
+	course1.Students().add(s3);
+	course1.IsFull();
 	}
 	
-
 }
