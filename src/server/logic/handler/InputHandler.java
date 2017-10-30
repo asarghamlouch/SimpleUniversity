@@ -11,7 +11,7 @@ public class InputHandler {
     public static final int CREATESTUDENT=4;
     public static final int CREATECOURSE=5;
     public static final int CANCELCOURSE=6;
-    public static final int DESTROYCOURSE=7;
+    public static final int DELETESTUDENT=7;
     public static final int FORCEREGISTERSTUDENTS=8;
     public static final int REGISTER=9;
     public static final int DROP=10;
@@ -77,9 +77,9 @@ public class InputHandler {
 			            state=CANCELCOURSE;
 			            oo.setOutput(output);
 			            oo.setState(state);
-		            }else if (input.equalsIgnoreCase("destroy course")) {
-		            	output = "Please Input The Code Of the Course You'd Like To Destroy:";
-		            	state=DESTROYCOURSE;
+		            }else if (input.equalsIgnoreCase("delete student")) {
+		            	output = "Please Input The Info of The Student You Like To Delete:";
+		            	state=DELETESTUDENT;
 		            	oo.setOutput(output);
 			            oo.setState(state);
 		            }else if(input.equalsIgnoreCase("log out")){
@@ -134,7 +134,26 @@ public class InputHandler {
 		        	}
 		        
 		        }
-		        else if(state==CANCELCOURSE){
+		        else if(state==DELETESTUDENT){
+		        	if(input.equalsIgnoreCase("log out")){
+		            	output = "Successfully Log Out!";
+		                state = WAITING;
+		                oo.setOutput(output);
+			            oo.setState(state);
+		        	}else if(input.equalsIgnoreCase("main menu")){
+		        		output = "Please choose one option from the following menu: Create course, Creste Student, Cancel course, Destroy Course";
+		                state = CLERK;
+		                oo.setOutput(output);
+			            oo.setState(state);
+		        	}else{
+		        		o=outputHandler.deleteStudent(input);
+		        		output=o.getOutput();
+		        		state=o.getState();
+		        		oo.setOutput(output);
+			            oo.setState(state);
+		        	}
+		        
+		        } else if(state==CANCELCOURSE){
 		        	if(input.equalsIgnoreCase("log out")){
 		            	output = "Successfully Log Out!";
 		                state = WAITING;
@@ -152,7 +171,6 @@ public class InputHandler {
 		        		oo.setOutput(output);
 			            oo.setState(state);
 		        	}
-		        
 		        }
 		        else if(state==REGISTER){
 		        	if(input.equalsIgnoreCase("log out")){

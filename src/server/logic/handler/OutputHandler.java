@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import client.NumberOfDays;
 import server.logic.handler.model.Output;
 import server.logic.model.Course;
 import server.logic.model.Student;
@@ -33,7 +34,7 @@ public class OutputHandler {
     public static final int COURSEHASFINAL=14;
     public static final int COURSEHASPRERECS=15;
     Student student;
-    
+    NumberOfDays num=new NumberOfDays();
     
     public Output clerkLogin(String input) {
 		Output output=new Output("",0);
@@ -81,6 +82,7 @@ public class OutputHandler {
         	output.setOutput("Your input should in this format:'username,password'");
         	output.setState(CREATESTUDENT);
         }else{
+        	if(num.numOfDays<=14) {
         	result=StudentTable.getInstance().createStudent(strArray[0], strArray[1]);
         	if(result.equals(true)){
         		FileInputStream fis = null;
@@ -106,7 +108,9 @@ public class OutputHandler {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-        		output.setOutput("Success! You've Created A new Account:"+result1.Name());
+        		output.setOutput("Success! You've Created A new Account: "+result1.Name()+num.numOfDays);
+        	}
+        	else {output.setOutput("Sorry, You are not allowed to registe at this moment ");}
         	}else{
         		output.setOutput("The User Already Exists!");
         	}
@@ -151,8 +155,46 @@ public class OutputHandler {
         	
     	}
 	public Output cancelCourse(String input) {
-        
-		return null;
+		List<Course> courses= new ArrayList<Course>();
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        Object result="";
+        if(strArray.length!=2 ) {
+            output.setOutput("Your input should be in this format:(Course Code, Course Title)");
+        	output.setState(CANCELCOURSE);}
+        	else {
+        		result=CourseTable.getInstance().cancelCourse(strArray[0], strArray[1]);
+        		
+        		if(result.equals(true)){
+            		output.setOutput("Success! You've Canceled the course "+strArray[1]);
+            	}else{
+            		output.setOutput("This course doesn't Exist!");
+            	}
+            	output.setState(CLERK);
+            }
+		return output;
+	}
+	public Output deleteStudent(String input) {
+		
+		Output output=new Output("",0);
+		String[] strArray = null;   
+        strArray = input.split(",");
+        Object result="";
+        if(strArray.length!=2 ) {
+        output.setOutput("Your input should be in this format:(username, password)");
+    	output.setState(DELETESTUDENT);}
+    	else {
+    		result=StudentTable.getInstance().deleteStudent(strArray[0], strArray[1]);
+    		
+    		if(result.equals(true)){
+        		output.setOutput("Success! You've Deleted the user "+strArray[0]);
+        	}else{
+        		output.setOutput("This student doesn't Exist!");
+        	}
+        	output.setState(CLERK);
+        }
+		return output;
 	}
 	public Output register(String input) {
 		List<Course> courses= new ArrayList<Course>();
@@ -162,7 +204,6 @@ public class OutputHandler {
         Object result="";
     	try {FileInputStream fi = new FileInputStream(new File("Courses.ser"));
 		ObjectInputStream oi = new ObjectInputStream(fi);
-
 		// Read objects
 		while(true) {
 		Course cr = (Course) oi.readObject();

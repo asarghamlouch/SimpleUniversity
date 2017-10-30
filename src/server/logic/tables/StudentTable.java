@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import server.logic.model.Student;
 
 import utilities.Trace;
 
-public class StudentTable {
+public class StudentTable implements Serializable{
 	private Logger logger = Trace.getInstance().getLogger("opreation_file");
 	List<Student> studentList=new ArrayList<Student>();
 
@@ -70,7 +71,66 @@ public class StudentTable {
 				
 			}
 			
-		
+		public Object deleteStudent(String string, String string2) {
+			boolean result=true;
+			List<Student> students= new ArrayList<Student>();
+			int flag=0;
+			for(int i=0;i<studentList.size();i++){
+				String user=(studentList.get(i)).Name();
+				if(user.equalsIgnoreCase(string)){
+					flag=flag+1;
+				}else{
+					flag=flag+0;	
+				}
+			}
+			if(flag==0){
+				try {FileInputStream fi = new FileInputStream(new File("Students.ser"));
+	    		ObjectInputStream oi = new ObjectInputStream(fi);
+	    		// Read objects
+	    		while(true) {
+	    		Student st = (Student) oi.readObject();
+	    		students.add(st);
+	    		oi.close();
+	    		fi.close();
+	    		}
+	    		
+	    	} catch (FileNotFoundException e1) {
+	    		System.out.println("File not found");
+	    	} catch (IOException e2) {
+	    		System.out.println("Error initializing stream");
+	    	} catch (ClassNotFoundException e3) {
+	    		// TODO Auto-generated catch block
+	    		e3.printStackTrace();
+	    	}
+	    		 for(int i=0;i<students.size();i++) {
+	    	       if(students.get(i).Name().equals(string) && students.get(i).getPassword().equals(string2))
+	    	     students.remove(students.get(i));}
+	    	       try {
+					new FileOutputStream("Students.ser").close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				
+	    		 }
+	    	       for(int i=0;i<students.size();i++) {
+	    	       try {
+						// write object to file
+						FileOutputStream fos = new FileOutputStream("Students.ser");
+						ObjectOutputStream oos = new ObjectOutputStream(fos);
+						oos.writeObject(students.get(i));
+						oos.close();
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}}
+	    	       logger.info(String.format("Operation:Delete student:[%s,%s];State:Success", string,string2));
+			}else{
+				result=false;
+            	
+			}
+			return result;
+		}
 		
 		public Object createStudent(String string, String string2) {
 			boolean result=true;

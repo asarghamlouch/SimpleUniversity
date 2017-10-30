@@ -26,4 +26,5 @@ public class StudentTests {
 		u.Students().add(s);
 		s.IsCreated();
 	}
+	
 }

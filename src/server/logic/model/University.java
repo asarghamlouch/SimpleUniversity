@@ -1,9 +1,10 @@
 package server.logic.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class University implements UniversityInterface {
+public class University implements UniversityInterface, Serializable {
 	int UniversityCourses;
 	int MaxCoursesForFTStudents;
 	int MaxCoursesForPTStudents;

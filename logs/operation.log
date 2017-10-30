@@ -441,4 +441,73 @@
 @2017-10-29 17:06:16 INFO  UnivClient:31 - 64286 : Connected to portid: 64286
 @2017-10-29 17:06:16 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__64286
 @2017-10-29 17:07:09 INFO  String:63 - Operation:Create New Course;Course Info:[123456,operating systems,false,false,10,1,2];State:Success
+@2017-10-30 05:02:38 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:02:46 INFO  UnivClient:30 - 61319 : Connected to server: /127.0.0.1
+@2017-10-30 05:02:46 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:02:46 INFO  UnivClient:31 - 61319 : Connected to portid: 61319
+@2017-10-30 05:02:46 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__61319
+@2017-10-30 05:46:03 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:46:12 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:46:12 INFO  UnivClient:30 - 57426 : Connected to server: /127.0.0.1
+@2017-10-30 05:46:12 INFO  UnivClient:31 - 57426 : Connected to portid: 57426
+@2017-10-30 05:46:12 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__57426
+@2017-10-30 05:47:47 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:47:55 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:47:55 INFO  UnivClient:30 - 57511 : Connected to server: /127.0.0.1
+@2017-10-30 05:47:55 INFO  UnivClient:31 - 57511 : Connected to portid: 57511
+@2017-10-30 05:47:55 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__57511
+@2017-10-30 05:50:23 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:50:23 INFO  UnivClient:30 - 57654 : Connected to server: /127.0.0.1
+@2017-10-30 05:50:23 INFO  UnivClient:31 - 57654 : Connected to portid: 57654
+@2017-10-30 05:50:23 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__57654
+@2017-10-30 05:51:23 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:51:23 INFO  UnivClient:30 - 57712 : Connected to server: /127.0.0.1
+@2017-10-30 05:51:23 INFO  UnivClient:31 - 57712 : Connected to portid: 57712
+@2017-10-30 05:51:23 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__57712
+@2017-10-30 05:51:47 INFO  String:159 - Operation:Create New User;User Info:[firas,1234];State:Success
+@2017-10-30 05:53:19 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:53:25 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:53:25 INFO  UnivClient:30 - 57820 : Connected to server: /127.0.0.1
+@2017-10-30 05:53:25 INFO  UnivClient:31 - 57820 : Connected to portid: 57820
+@2017-10-30 05:53:25 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__57820
+@2017-10-30 05:53:45 INFO  String:159 - Operation:Create New User;User Info:[firas,1234];State:Success
+@2017-10-30 05:56:18 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:56:26 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:56:26 INFO  UnivClient:30 - 57988 : Connected to server: /127.0.0.1
+@2017-10-30 05:56:26 INFO  UnivClient:31 - 57988 : Connected to portid: 57988
+@2017-10-30 05:56:26 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__57988
+@2017-10-30 05:56:44 INFO  String:160 - Operation:Create New User;User Info:[firas,1234];State:Success
+@2017-10-30 05:58:25 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:58:32 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 05:58:32 INFO  UnivClient:30 - 58125 : Connected to server: /127.0.0.1
+@2017-10-30 05:58:32 INFO  UnivClient:31 - 58125 : Connected to portid: 58125
+@2017-10-30 05:58:32 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__58125
+@2017-10-30 05:58:53 INFO  String:160 - Operation:Create New User;User Info:[yaser,1234];State:Success
+@2017-10-30 06:12:51 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:13:01 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:13:01 INFO  UnivClient:30 - 58951 : Connected to server: /127.0.0.1
+@2017-10-30 06:13:01 INFO  UnivClient:31 - 58951 : Connected to portid: 58951
+@2017-10-30 06:13:01 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__58951
+@2017-10-30 06:13:23 INFO  String:160 - Operation:Create New User;User Info:[asar,1234];State:Success
+@2017-10-30 06:14:02 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:14:02 INFO  UnivClient:30 - 59009 : Connected to server: /127.0.0.1
+@2017-10-30 06:14:02 INFO  UnivClient:31 - 59009 : Connected to portid: 59009
+@2017-10-30 06:14:02 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__59009
+@2017-10-30 06:15:03 INFO  String:127 - Operation:Delete student:[firas,1234];State:Success
+@2017-10-30 06:34:56 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:35:03 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:35:03 INFO  UnivClient:30 - 60243 : Connected to server: /127.0.0.1
+@2017-10-30 06:35:03 INFO  UnivClient:31 - 60243 : Connected to portid: 60243
+@2017-10-30 06:35:03 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__60243
+@2017-10-30 06:35:32 INFO  String:66 - Operation:Create New Course;Course Info:[123456,os,false,false,20,0,4];State:Success
+@2017-10-30 06:36:08 INFO  String:128 - Operation:Delete Course:[123456,os];State:Success
+@2017-10-30 06:37:30 INFO  String:128 - Operation:Delete Course:[927719,ki];State:Success
+@2017-10-30 06:55:54 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:56:03 INFO  UnivServer:56 - Waiting for a client ...
+@2017-10-30 06:56:03 INFO  UnivClient:30 - 61501 : Connected to server: /127.0.0.1
+@2017-10-30 06:56:03 INFO  UnivClient:31 - 61501 : Connected to portid: 61501
+@2017-10-30 06:56:03 INFO  ServerThread:52 - Class: ServerThread: Server Thread Running__61501
+@2017-10-30 06:56:54 INFO  String:160 - Operation:Create New User;User Info:[asar,123];State:Success
+@2017-10-30 07:00:14 INFO  String:160 - Operation:Create New User;User Info:[john,1223];State:Success
+@2017-10-30 07:07:09 INFO  String:160 - Operation:Create New User;User Info:[fadi,187];State:Success
 @
